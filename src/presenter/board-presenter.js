@@ -110,6 +110,7 @@ export default class EventsListPresenter {
   #handleEventChange = (updatedEvent) => {
     this.#events.set(updatedEvent.id, updatedEvent);
     this.#sourcedEvents.set(updatedEvent.id, updatedEvent);
+    //this.#eventPresenters.get(updatedEvent.id).init(updatedEvent);
     this.#eventPresenters.get(updatedEvent.id).init(updatedEvent);
   };
 

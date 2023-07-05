@@ -37,9 +37,12 @@ export default class EventPresenter {
     this.#handleModeChange = onModeChange;
   }
 
-  init(event) {
+  init(event, test) {
     this.#event = event;
     const typeOffers = this.#offersModel.offers.get(event.type);
+    if (test === 123) {
+    // console.log(event);
+    }
 
     const prevEventComponent = this.#eventComponent;
     const prevFormComponent = this.#formComponent;

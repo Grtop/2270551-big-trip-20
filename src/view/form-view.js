@@ -103,6 +103,7 @@ function createFormTemplate({ event, destinationsNames }) {
   const destinationInfoTemplate = destinationInfo.description
     ? createDestinationInfoTemplate(destinationInfo)
     : '';
+  //console.log(event.destinationInfo.description);
 
   return `<li class="trip-events__item">
             <form class="event event--edit" action="#" method="post">
@@ -263,15 +264,18 @@ export default class FormView extends AbstractStatefulView {
       Array.from(state.typeOffers.keys()),
       state.offers
     );
+    //console.log(state.destination);
     state.destinationInfo = destinations.get(state.destination);
-
+    //console.log(state.destination);
     return state;
   }
 
   static parseStateToEvent(state) {
     const event = { ...state };
     event.destination = event.destinationInfo.id;
+    //console.log(event.destinationInfo.id);
     event.offers = [];
+    //console.log(event.destinationInfo.description);
     event.offersSelection.forEach((value, id) => {
       if (value) {
         event.offers.push(id);
