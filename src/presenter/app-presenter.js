@@ -46,13 +46,6 @@ export default class AppPresenter {
     );
   }
 
-  /*#renderButton() {
-    render (
-      new ButtonView(),
-      this.#tripMainElement,
-    );
-  }*/
-
   #renderButton(disabled) {
     this.#eventAddButton = new ButtonView({disabled});
     render(this.#eventAddButton, this.#tripMainElement);

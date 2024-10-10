@@ -2,10 +2,11 @@ import { DateFormats } from '../consts.js';
 import { transformDate, getDuration } from '../utils.js';
 import AbstractView from '../framework/view/abstract-view.js';
 
+//функция получения выыбранных предложений
 function getChosenOffers(offers, offersIds) {
   return offersIds.map((offerId) => offers.get(offerId));
 }
-
+//функция создать шаблон одного предложения
 function createOfferTemplate({ title, price }) {
   return `<li class="event__offer">
             <span class="event__offer-title">${title}</span>
@@ -14,6 +15,7 @@ function createOfferTemplate({ title, price }) {
           </li>`;
 }
 
+//функция создать шаблон предложений
 function createOffersTemplate({ typeOffers, offers }) {
   const offersItemsTemplate = getChosenOffers(typeOffers, offers)
     .map((offer) => createOfferTemplate(offer))
@@ -23,6 +25,7 @@ function createOffersTemplate({ typeOffers, offers }) {
           <ul class="event__selected-offers">${offersItemsTemplate}</ul>`;
 }
 
+//функция создать шаблон мероприятия
 function createEventTemplate({ event, typeOffers, destinationName }) {
   const { type, basePrice, isFavorite, offers, dateFrom, dateTo } =
     event;
@@ -33,6 +36,7 @@ function createEventTemplate({ event, typeOffers, destinationName }) {
 
   const favoriteClass = isFavorite ? 'event__favorite-btn--active' : '';
 
+  //получить продолжительность
   const duration = getDuration(dateFrom, dateTo);
 
   return `<li class="trip-events__item">

@@ -1,5 +1,13 @@
 Папка для скриптов.
-запуск проекта `npm start`
+## src/view 
+модули (отдельные файлы) и описанные в них классы для генерации DOM-элементов. Эти модули — наши компоненты, или же View в рамках MVP.
+event-button-view.js - создание ДОМ кнопки New_Event
+
+
+
+
+
+ ПОДГОТОВКА К УСТАНОВКЕ ПРОЕКТА
 ## По-шаговая установка:
 ## Установка webpack and webpack.cli  - `npm install -ED webpack webpack-cli`
 ## в webpack.config.js прописываем: точка входа main.js, сборка папка build 
